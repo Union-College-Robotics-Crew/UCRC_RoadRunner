@@ -1,9 +1,11 @@
 # UCRC_robot
 ## Instruction for fast update on robot: (MAC)
 First right click on the folder and open with Terminal.
+Next make sure the folder is empty with `ls -a`
+Remove everything `.` file individually
 Then use the following code:
 ```
-git clone https://github.com/Union-College-Robotics-Crew/UCRC_robot.git
+git clone https://github.com/Union-College-Robotics-Crew/UCRC_robot.git .
 cd UCRC_robot
 mv * ..
 cd ..
