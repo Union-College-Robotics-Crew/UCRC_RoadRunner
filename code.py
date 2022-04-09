@@ -10,15 +10,16 @@ import rotaryio
 import analogio
 from src.robot import Robot
 from src.magnetometer import Magnetometer
+from src.main import Main
 
 
 from digitalio import DigitalInOut, Direction, Pull
 
-NUM_CELLS = 4
+# NUM_CELLS = 4
 
 # Temporary Encoder Configuration:
-encL = rotaryio.IncrementalEncoder(config.l_encA, config.l_encB)
-encR = rotaryio.IncrementalEncoder(config.r_encA, config.r_encB)
+# encL = rotaryio.IncrementalEncoder(config.l_encA, config.l_encB)
+# encR = rotaryio.IncrementalEncoder(config.r_encA, config.r_encB)
 
 time.sleep(5)
 # led = DigitalInOut(board.LED)
@@ -27,10 +28,10 @@ time.sleep(5)
 
 # switch.direction = Direction.INPUT
 # switch.pull = Pull.UP
-test_robot = Robot(encL, encR)
+# test_robot = Robot(encL, encR)
 # while True:
 #     print(encL.position)
-test_robot.turnLeft()
+#test_robot.turnLeft()
 # while True:
 #     # We could also do "led.value = not switch.value"!
 #     # if switch.value:
@@ -56,6 +57,9 @@ test_robot.turnLeft()
 # while (iteration < 8):
 #     test_robot.forward()
 #     iteration += 1
+
+road_runner = Main()
+road_runner.maze_solver()
 
 # test_robot.brake()
 # while True:
