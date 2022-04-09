@@ -37,7 +37,7 @@ FRWD_LOW_TIME = .7
 NO_WALL_TIME = 1
 
 INITIAL_FRWD_COUNT = 39
-NORMAL_FRWRD_COUNT = 80
+NORMAL_FRWRD_COUNT = 200
 class Robot:
 
     def __init__(self, l_enc, r_enc):
@@ -88,7 +88,7 @@ class Robot:
         l_start_pos = self.__l_motor.position()
         r_start_pos = self.__r_motor.position()
 
-        while (self.__continueForward()):
+        while (self.__continueForward(l_start_pos, r_start_pos)):
             use_PID = True
 
             if (self.wallLeft() and self.wallRight()):
@@ -281,7 +281,7 @@ class Robot:
 
         curLeft = self.__l_motor.position() - leftPos
         curRight = self.__r_motor.position() - rightPos
-        if ((curLeft + curRight) / 2 > 80):
+        if ((curLeft + curRight) / 2 > NORMAL_FRWRD_COUNT):
             return False
 
         return True
