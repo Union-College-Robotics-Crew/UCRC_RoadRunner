@@ -8,7 +8,7 @@ import random
 TURN_LEFT = 1
 TURN_RIGHT = 2
 
-class Main:
+class RandomMazeSolve:
 
     def __init__(self):
         encL = rotaryio.IncrementalEncoder(config.l_encA, config.l_encB)
